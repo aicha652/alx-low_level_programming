@@ -6,20 +6,19 @@
  */
 int main(void)
 {
-	char C = 'a';
-
-	for (; C <= 'z'; )
-	{
-		if (C != 'e' && C != 'q')
-		{
-			putchar(C);
-			C++;
-		}
-		else
-		{
-			C++;
-		}
-	}
-	putchar('\n');
-	return (0);
-}	
+char C = 'a';
+for (; C <= 'z'; )
+{
+if (C != 'e' && C != 'q')
+{
+putchar(C);
+C++;
+}
+else
+{
+C++;
+}
+}
+putchar('\n');
+return (0);
+}
