@@ -6,23 +6,23 @@
  */
 int main(void)
 {
-	int i = 0;
+int i = 0;
 
-	for (; i < 10;)
-	{
-		if (i != 9)
-		{
-			putchar('0' + i);
-			putchar(',');
-		        putchar(' ');
-			i++;
-		}
-		else
-		{
-			printf("%d", i);
-			i++;
-		}
-	}
-	putchar('\n');
-	return (0);
+for (; i < 10;)
+{
+if (i != 9)
+{
+putchar('0' + i);
+putchar(',');
+putchar(' ');
+i++;
+}
+else
+{
+printf("%d", i);
+i++;
+}
+}
+putchar('\n');
+return (0);
 }
