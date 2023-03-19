@@ -19,7 +19,7 @@ int main(void)
 		}
 		else
 		{
-			putchar('0' + i);
+			printf("%d",i);
 			i++;
 		}
 	}
