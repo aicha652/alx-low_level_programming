@@ -8,9 +8,9 @@ int main(void)
 {
 	int i = 0;
 
-	for(; i < 10;)
+	for (; i < 10;)
 	{
-		if(i != 9)
+		if (i != 9)
 		{
 			putchar('0' + i);
 			putchar(',');
@@ -19,7 +19,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%d",i);
+			printf("%d", i);
 			i++;
 		}
 	}
