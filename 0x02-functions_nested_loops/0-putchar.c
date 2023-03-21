@@ -1,8 +1,13 @@
-#include "main.h"
 /**
  * File 0-putchar.c
  */
-int main()
+#include "main.h"
+/**
+ * main - prints _putchar followed by new line
+ *
+ * Return: Always 0
+ */
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
