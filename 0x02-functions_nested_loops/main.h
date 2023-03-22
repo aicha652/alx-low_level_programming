@@ -12,5 +12,5 @@ int islower(int c);
 int _isalpha(int c);
 int isalpha(int c);
 int print_sign(int n);
-int _abs(int i);
-int abs(int i);
+int _abs(int y);
+int abs(int y);
