@@ -3,15 +3,17 @@
  * _abs -  function that computes the absolute value of an integer.
  * @y: the integer that we will computes his absolute value.
  *
- * Return: 1 (Success).
+ * Return: The absolute value of the integer.
  */
 int _abs(int y)
 {
-	int x;
-
-	x = abs(y);
+	if(y > 0)
 	{
-		_putchar(x);
+		return (1);
+	}
+	if(y < 0)
+	{
+		return (-y);
 	}
 	return (0);
 }
