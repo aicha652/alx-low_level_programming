@@ -7,21 +7,9 @@
  */
 int print_last_digit(int n)
 {
-int d;
-if (n > 0)
-{
-d = n % 10;
-_putchar(d + '0');
-}
-else if (n == 0)
-{
-_putchar(n + '0');
-}
-else
-{
-d = -n % 10;
-_putchar(d + '0');
-_putchar(d + '0');
-}
-return (0);
+int last_digit = n % 10;
+if (last_digit < 0)
+	last_digit *= -1;
+_putchar(last_digit + '0');
+return (last_digit);
 }
