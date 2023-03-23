@@ -20,7 +20,7 @@ else if ((b > a && a > c) || (b > c && c > a))
 {
 	largest = b;
 }
-else if ((c > a && a > b) || (c > b && b > a))
+else
 {
 	largest = c;
 }
