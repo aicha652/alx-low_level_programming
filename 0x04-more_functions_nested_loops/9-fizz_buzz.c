@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 /**
  * main - the Fizz-Buzz program
@@ -12,22 +13,35 @@ for (i = 1; i <= 100; i++)
 {
 	if (i % 3 == 0 && i % 5 == 0)
 	{
-		printf("FizzBuzz");
+		_putchar('F');
+		_putchar('i');
+		_putchar('z');
+		_putchar('z');
+		_putchar('B');
+                _putchar('u');
+                _putchar('z');
+                _putchar('z');
 	}
 	else if (i % 5 == 0)
 	{
-		printf("Buzz");
+		_putchar('B');
+		_putchar('u');
+		_putchar('z');
+		_putchar('z');
 	}
 	else if (i % 3 == 0)
 	{
-		printf("Fizz");
+		_putchar('F');
+                _putchar('i');
+                _putchar('z');
+                _putchar('z');
 	}
 	else
 	{
-		printf("%d", i);
+		_putchar(i + 48);
 	}
-	printf(" ");
+	_putchar(' ');
 }
-printf("\n");
+_putchar('\n');
 return (0);
 }
