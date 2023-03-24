@@ -25,8 +25,10 @@ for (i = 1; i <= 100; i++)
 	else
 	{
 		printf("%d", i);
+	}if (x != 100)
+	{
+		printf(" ");
 	}
-	printf(" ");
 }
 printf("\n");
 return (0);
