@@ -19,7 +19,7 @@ void print_square(int size)
 		}
 		else
 		{
-			for (;i <= size; i++)
+			for (; i <= size; i++)
 			{
 				for (j = 1; j <= size;)
 				{
@@ -36,4 +36,3 @@ void print_square(int size)
 		_putchar('\n');
 	}
 }
-		
