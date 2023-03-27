@@ -9,6 +9,6 @@ int _strlen(char *s)
 size_t x;
 
 x = strlen(s);
-_putchar(x);
+printf("%lu", x);
 return (0);
 }
