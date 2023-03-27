@@ -6,9 +6,7 @@
  */
 int _strlen(char *s)
 {
-size_t x;
+printf("%lu", strlen(s));
 
-x = strlen(s);
-printf("%lu", x);
 return (0);
 }
