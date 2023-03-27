@@ -6,11 +6,19 @@
  */
 void rev_string(char *s)
 {
-	size_t i;
-	
-	for (i = strlen(s) - 1; i <= strlen(s); i--)
+int i;
+
+for (i = strlen(s) - 1; i >= 0;)
+{
+	if (i == 0)
 	{
 		printf("%c", s[i]);
+		break;
 	}
-	printf("\n");
+	else
+	{
+		printf("%c", s[i]);
+		i--;
+	}
+}
 }
