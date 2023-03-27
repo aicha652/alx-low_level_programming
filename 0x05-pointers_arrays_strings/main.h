@@ -7,3 +7,4 @@ int _strlen(char *s);
 size_t strlen(const char *s);
 void _puts(char *str);
 int puts(const char *str);
+void print_array(int *a, int n);
