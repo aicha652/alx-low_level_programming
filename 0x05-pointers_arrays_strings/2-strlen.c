@@ -6,9 +6,9 @@
  */
 int _strlen(char *s)
 {
-	size_t x;
-	
-	x = strlen(s);
-	_putchar(x + '0');
-	return (0);
+size_t x;
+
+x = strlen(s);
+_putchar(x);
+return (0);
 }
