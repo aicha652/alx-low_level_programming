@@ -6,7 +6,11 @@
  */
 int _strlen(char *s)
 {
-printf("%lu", strlen(s));
-
-return (0);
+int i = 0;
+for (;*s != 0;)
+{
+	i++;
+	s++;
+}
+return (i);
 }
