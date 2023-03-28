@@ -6,18 +6,18 @@
  */
 void puts2(char *str)
 {
-while (*str != '\0')
-{
-	if (*str % 2)
+	int i;
+	int j = 0;
+
+	while (str[j] != '\0')
 	{
-		printf("%c", *str);
-		puts2(++str);
+		j++;
 	}
-	else
+
+	for (i = 0; i < j; i += 2)
 	{
-		puts2(++str);
+		_putchar(str[i]);
 	}
-}
-puts2(++str);
-printf("\n");
+
+	_putchar('\n');
 }
