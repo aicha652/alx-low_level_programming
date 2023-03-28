@@ -13,9 +13,6 @@ for (i = 0; i < strlen(src) && src[i] != '\0'; i++)
 {
 	dest[i] = src[i];
 }
-for ( ; i < strlen(src); i++)
-{
-	dest[i] = '\0';
-}
+dest[i++] = '\0';
 return (dest);
 }
