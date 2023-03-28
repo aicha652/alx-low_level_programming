@@ -6,14 +6,11 @@
  */
 void puts_half(char *str)
 {
-	char c;
-	if  (strlen(str) > 1)
+	size_t i;
+	i = strlen(str) / 2;
+	for (;i < strlen(str); i++)
 	{
-		c = ((strlen(str) - 1) / 2);
-		printf("%c", c);
+		printf("%c", str[i]);
 	}
-	else if ( strlen(str) == 1)
-	{
-		printf("%s", str);
-	}
+	printf("\n");
 }
