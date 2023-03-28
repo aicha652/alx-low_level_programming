@@ -8,7 +8,7 @@ void puts_half(char *str)
 {
 size_t i;
 i = strlen(str) / 2;
-for (; i < strlen(str); i++)
+for (; i < strlen(str) && str[i] != '\0'; i++)
 {
 	printf("%c", str[i]);
 }
