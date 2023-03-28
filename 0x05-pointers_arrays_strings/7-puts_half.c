@@ -16,7 +16,7 @@ if (strlen(str) / 2)
 }
 else if(strlen(str) % 2 == 1) 
 {
-	for (i = (strlen(str) / 2)+ 1; i < strlen(str); i++)
+	for (i = (strlen(str) - 1)/ 2; i < strlen(str); i++)
 	{
 		printf("%c", str[i]);
 	}
