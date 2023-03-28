@@ -6,9 +6,13 @@
 void puts2(char *str)
 {
 	size_t i;
+	char c;
 
-	for (i = 0; i < strlen(str); i = i+2)
+	for (i = 0; i < strlen(str);)
 	{
-		printf("%u", str[i]);
+		c = str[i];
+		printf("%c", c);
+		i = i + 2;
 	}
+	printf("\n");
 }
