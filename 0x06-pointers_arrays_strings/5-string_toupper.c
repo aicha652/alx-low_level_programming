@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * string_toupper - function that changes all lowercase letters of a string to uppercase
+ * string_toupper - function that changes lowercase letters to uppercase
  * @str: string
  * Return: uppercase string
  */
@@ -13,5 +13,5 @@ for (; i < strlen(str);)
 	str[i] = toupper(str[i]);
 	i++;
 }
-return str;
+return (str);
 }
