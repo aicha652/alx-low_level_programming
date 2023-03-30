@@ -6,13 +6,13 @@
  */
 void reverse_array(int *a, int n)
 {
-int i, j=0;
+	int tmp, index;
 
-for (i = n - 1 ; i >= 0 && j < n; i--)
-{
-	a[j] = a[i];
-	j++;
-}
-printf("%d", a[j]);
+	for (index = n - 1; index >= n / 2; index--)
+	{
+		tmp = a[n - 1 - index];
+		a[n - 1 - index] = a[index];
+		a[index] = tmp;
+	}
 }
 
