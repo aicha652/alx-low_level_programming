@@ -37,7 +37,7 @@ char *leet(char *str)
 		}
 		else
 		{
-			printf("%u", str[i]);
+			printf("%s",strcat(str[i-1], str[i]));
 		}
 	}
 	printf("%s", str);
