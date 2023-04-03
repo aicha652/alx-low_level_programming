@@ -8,3 +8,5 @@ char *_strchr(char *s, char c);
 char *strchr(const char *s, int c);
 unsigned int _strspn(char *s, char *accept);
 size_t strspn(const char *s, const char *accept);
+char *_strpbrk(char *s, char *accept);
+char *strpbrk(const char *s, const char *accept);
