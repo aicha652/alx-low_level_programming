@@ -10,3 +10,5 @@ unsigned int _strspn(char *s, char *accept);
 size_t strspn(const char *s, const char *accept);
 char *_strpbrk(char *s, char *accept);
 char *strpbrk(const char *s, const char *accept);
+char *_strstr(char *haystack, char *needle);
+char *strstr(const char *haystack, const char *needle);
