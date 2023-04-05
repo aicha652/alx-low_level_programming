@@ -9,5 +9,5 @@ void _puts_recursion(char *s)
 
 	i = puts(s);
 
-	_putchar(i + 48);
+	_putchar(i + 0);
 }
