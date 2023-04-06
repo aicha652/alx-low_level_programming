@@ -12,3 +12,4 @@ double pow(double x, double y);
 int _sqrt_recursion(int n);
 double sqrt(double x);
 void _print_rev_recursion(char *s);
+int is_prime_number(int n);
