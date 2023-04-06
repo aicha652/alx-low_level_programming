@@ -9,3 +9,5 @@ size_t strlen(const char *s);
 int factorial(int n);
 int _pow_recursion(int x, int y);
 double pow(double x, double y);
+int _sqrt_recursion(int n);
+double sqrt(double x);
