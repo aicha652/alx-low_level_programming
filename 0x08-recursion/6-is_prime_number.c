@@ -18,7 +18,7 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	else if(n % 4 == 0 || n % 6 == 0 || n % 8 == 0)
+	else if (n % 4 == 0 || n % 6 == 0 || n % 8 == 0)
 	{
 		return (0);
 	}
