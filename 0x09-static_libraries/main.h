@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stddef.h>
+#include <string.h>
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
@@ -18,4 +21,14 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
-int puts(const char *s);
+int isupper(int c);
+void *memset(void *s, int b, size_t n);
+int isdigit(int c);
+void *memcpy(void *dest, const void *src, size_t n);
+char *strchr (const char *__s, int __c);
+int islower(int c);
+int puts (const char *__s);
+int strcmp (const char *__s1, const char *__s2);
+size_t strspn (const char *__s, const char *__accept);
+int isalpha(int c);
+int atoi(const char *nptr);
