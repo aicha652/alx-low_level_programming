@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
- * program that prints its name followed by a new line
+ * main - program that prints its name followed by a new line
+ * @argc: number of command line arguments
+ * @argv: array of size argc
  * Return: 0
  */
 int main(int argc, char *argv[])
