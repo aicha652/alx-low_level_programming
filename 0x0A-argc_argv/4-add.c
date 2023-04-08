@@ -16,7 +16,7 @@ if (argc == 1)
 }
 else
 {
-	for (i = 1; i < argc;)
+	for (i = 1; i < argc; i++)
 	{
 		char *c;
 
@@ -25,10 +25,6 @@ else
 		{
 			printf("Error\n");
 			exit(EXIT_FAILURE);
-		}
-		else
-		{
-			i++;
 		}
 	}
 	printf("%d\n", sum);
