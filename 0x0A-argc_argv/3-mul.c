@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			mul = mul * strtol( argv[i], NULL, 10);
+			mul = mul * strtol(argv[i], NULL, 10);
 		}
 		printf("%d\n", mul);
 	}
