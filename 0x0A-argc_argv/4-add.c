@@ -24,7 +24,7 @@ else
 		if (c == argv[i])
 		{
 			printf("Error\n");
-			exit(EXIT_FAILURE);
+			return (1);
 		}
 	}
 	printf("%d\n", sum);
