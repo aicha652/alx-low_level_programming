@@ -7,6 +7,6 @@
  */
 char *_strcat(char *dest, char *src)
 {
-printf("%s", strcat(dest, src));
-return (dest);
+/*printf("%s", strcat(dest, src));*/
+return (strcat(dest, src));
 }
