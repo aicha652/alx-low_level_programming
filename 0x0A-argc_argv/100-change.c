@@ -11,16 +11,12 @@ int main(int argc, char *argv[])
 int i, coin = 0;
 
 if (argc != 2)
-{
 	printf("Error\n");
 	return (1);
-}
 i = atoi(argv[1]);
 if (i < 0)
-{
 	printf("0\n");
 	return (0);
-}
 for (; i >= 0;)
 {
 	if (i >= 25)
