@@ -26,9 +26,9 @@ else
 			printf("Error\n");
 			return (1);
 		}
-		else if (argv[i] < 0)
+		else if (sum < 0)
 		{
-			exit (EXIT_FAILURE);
+			return (1);
 		}
 	}
 	printf("%d\n", sum);
