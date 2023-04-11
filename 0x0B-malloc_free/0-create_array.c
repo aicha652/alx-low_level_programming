@@ -17,8 +17,8 @@ if (size == 0)
 for (i = 0; i < size; i++)
 {
 	s[i] = c;
+	printf("%d", s[i]);
 }
-s[i] = '\0';
 printf("%s", s);
 return (0);
 }
