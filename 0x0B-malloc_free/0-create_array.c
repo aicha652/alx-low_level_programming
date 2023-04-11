@@ -1,0 +1,24 @@
+#include "main.h"
+/**
+ * *create_array - function that creates an array of chars
+ * @size: size of the array
+ * @c: array of this characters
+ * Return: array of chars
+ */
+char *create_array(unsigned int size, char c)
+{
+char s[] = " ";
+unsigned int i;
+
+if (size == 0)
+{
+	return (NULL);
+}
+for (i = 0; i < size; i++)
+{
+	s[i] = c;
+}
+s[i] = '\0';
+printf("%s", s);
+return (0);
+}
