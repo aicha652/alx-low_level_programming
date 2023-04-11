@@ -7,14 +7,22 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	if (s1 == NULL || s2 == NULL)
+	char *s =  malloc(strlen(s1) + strlen(s2) + 1);
+
+	if (s1 == NULL && s2 != NULL)
 	{
-		return (NULL);
+		return (s2);
+	}
+	else if (s1 != NULL && s2 == NULL)
+	{
+		return (s1);
 	}
 	else
 	{
+		(void)s;
 		strcat(s1, s2);
 		return (s1);
 	}
 	return (0);
+
 }
