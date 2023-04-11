@@ -2,7 +2,7 @@
 /**
  * *argstostr - fucntion that concatenates all th arguments
  * @ac: number of arguments
- * @**av: arguments
+ * @av: arguments
  * Return: concatenate arguments
  */
 char *argstostr(int ac, char **av)
