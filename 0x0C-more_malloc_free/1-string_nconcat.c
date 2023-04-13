@@ -7,12 +7,12 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	/*char *ptr;*/
+	unsigned int i;
 
-	/*ptr = malloc(s1 * s2 * n *sizeof(char));*/
-
-	strncat(s1, s2, n);
-	/*printf("%s", s1);*/
-       	puts (s1);
-	return (0);
+	for (i = 0; i < n && s2[i] != '\0'; i++)
+	{
+		s1[strlen(s1) + i] = s2[i];
+	}
+	s1[strlen(s1) + i] = '\0';
+	return s1;
 }
