@@ -9,7 +9,7 @@ void print_dog(struct dog *d)
 	/* d = malloc(sizeof(*d)); */
 
 	if (d == NULL)
-		exit(0);
+		return;
 	else if (d->name == NULL)
 		d->name = "(nil)";
 	/* else if (d->age == 0)
