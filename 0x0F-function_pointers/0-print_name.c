@@ -9,7 +9,8 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name && f)
+		f(name);
 	/* f = print_name_as_is;
 	(*f)("Bob");
 	f = print_name_uppercase;
