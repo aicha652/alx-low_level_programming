@@ -13,6 +13,5 @@ void print_name(char *name, void (*f)(char *))
 	(*f)("Bob");
 	f = print_name_uppercase;
 	(*f)("Bob Dylan");
-	printf("\n");
 	exit(EXIT_SUCCESS);
 }
