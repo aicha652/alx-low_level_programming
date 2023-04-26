@@ -3,13 +3,15 @@
  * *string_nconcat - function that concatenates 2 strings
  * @s1: first string
  * @s2: second string
+ * @n: n bytes of s2
  * Return: concatenation
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
 	char *ptr;
-	ptr = malloc(sizeof(*s1) + sizeof(*s2)*n);
+
+	ptr = malloc(sizeof(*s1) + sizeof(*s2) * n);
 
 	for (i = 0; i < n && s2[i] != '\0'; i++)
 	{
