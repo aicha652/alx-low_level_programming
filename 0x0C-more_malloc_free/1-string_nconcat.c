@@ -14,9 +14,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	ptr = malloc(sizeof(*s1) + sizeof(*s2) * n);
 
 	if (s2 == NULL || n == 0)
-		{
-			return (s1);
-		}
+	{
+		return (s1);
+	}
+	else if (s1 == NULL || n == 0)
+	{
+		return (s2);
+	}
 	else
 	{
 		for (i = 0; i < n && s2[i] != '\0'; i++)
