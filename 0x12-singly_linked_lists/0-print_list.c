@@ -10,11 +10,6 @@ size_t print_list(const list_t *h)
 {
 	unsigned int i, j, n = 0, s = 1;
 
-	/*if (h->str == NULL)
-	{
-		printf("[0] (nil)");
-	}*/
-	
 	for (i = 0; i < h->len; i++)
 	{
 	}
@@ -30,7 +25,7 @@ size_t print_list(const list_t *h)
 		n++;
 	}
 
-	for( j = 0; j < h->next->len; j++)
+	for (j = 0; j < h->next->len; j++)
 	{
 	}
 	printf("[%d] ", j);
