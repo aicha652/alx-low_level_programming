@@ -22,17 +22,12 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		list_t *list = *head;
+
 		while (list->next != NULL)
 		{
 			list =	list->next;
 		}
 		list->next = new;
 	}
-	/*if (*head == NULL)
-		return (NULL);
-	(*head)->str = (char *)str;
-	(*head)->len = strlen(str);
-	(*head) = (*head)->next;*/
-
 	return (new);
 }
