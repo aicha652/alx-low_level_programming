@@ -12,6 +12,7 @@ void free_listint2(listint_t **head)
 	{
 		list = *head;
 		*head = (*head)->next;
+		list = NULL;
 		free(list);
 	}
 }
