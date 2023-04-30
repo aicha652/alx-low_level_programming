@@ -6,13 +6,8 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *list;
-
 	while (*head != NULL)
 	{
-		list = *head;
-		*head = (*head)->next;
-		(void)list;
-		list = NULL;
+		*head = NULL;
 	}
 }
