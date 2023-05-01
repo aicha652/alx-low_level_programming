@@ -35,9 +35,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			list = list->next;
 			i++;
 		}
-		if (list == NULL)
-			return (NULL);
-		else if (idx == j + 1)
+		/*if (list == NULL)
+			return (NULL);*/
+		if (idx > j)
 		{
 			return (NULL);
 		}
