@@ -8,7 +8,7 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int i = 1, j;
+	unsigned int i = 1, j = 0;
 	int n;
 	listint_t *list;
 	listint_t *new;
