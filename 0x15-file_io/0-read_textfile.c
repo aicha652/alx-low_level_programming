@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open("Requiescat", O_RDONLY);
 	read(fd, buff, letters);
-	printf("%s", buff);
+	buff[letters] = '\0';
 
 	for (i = 0; i < letters && buff[i] != '\0'; i++)
 		count++;
