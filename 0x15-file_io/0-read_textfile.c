@@ -9,38 +9,29 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	size_t i, res, count = 0;
 	char *buff;
+	int sz_read, sz_write;
 
 	if (filename == NULL)
 		return (0);
 
-	buff = malloc(sizeof(char) * letters);
-	
+	fd = open("Requiescat", O_RDONLY);
+	if (fd == -1)
+		return (0);
+	buff = malloc (sizeof(char) * letters);
+
 	if (buff == NULL)
 		return (0);
 
-	fd = open("Requiescat", O_RDONLY);
+	sz_read = read(fd, buff, letters);
 	
-	if (fd == -1)
+	if (sz_read == -1)
+		return(0);
+	
+	sz_write = write(STDOUT_FILENO, buff, sz_read);
+	if (sz_write == -1 || sz_write != sz_read)
 		return (0);
 
-	read(fd, buff, letters);
-	buff[letters] = '\0';
-
-	for (i = 0; i < letters && buff[i] != '\0'; i++)
-		count++;
-
-	res = close(fd);
-
-	if (res != 0)
-		return (0);
-
-	res = write(STDOUT_FILENO, buff, count);
-	
-	if (res != count)
-		return (0);
-	
-	free(buff);
-	return (count);
+	close(fd);
+	return (sz_write);
 }
