@@ -10,7 +10,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *buff;
-	int sz_read, sz_write;
+	ssize_t sz_read, sz_write;
 
 	if (filename == NULL)
 		return (0);
@@ -18,16 +18,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open("Requiescat", O_RDONLY);
 	if (fd == -1)
 		return (0);
-	buff = malloc (sizeof(char) * letters);
+	buff = malloc(sizeof(char) * letters);
 
 	if (buff == NULL)
 		return (0);
 
 	sz_read = read(fd, buff, letters);
-	
 	if (sz_read == -1)
-		return(0);
-	
+		return (0);
 	sz_write = write(STDOUT_FILENO, buff, sz_read);
 	if (sz_write == -1 || sz_write != sz_read)
 		return (0);
