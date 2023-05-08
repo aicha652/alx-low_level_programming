@@ -17,6 +17,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
+	if (buff == NULL)
+		return (0);
+
 	fd = open("Requiescat", O_RDONLY);
 	read(fd, buff, letters);
 	buff[letters] = '\0';
@@ -27,6 +30,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	res = write(STDOUT_FILENO, buff, count);
 	if (res != count)
 		return (0);
+	
+	free(buff);
 	close(fd);
 	return (count);
 }
