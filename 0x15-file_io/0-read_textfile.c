@@ -9,19 +9,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	size_t i, count = 0;
-	char *buff[1024];
+	char *buff;
+
+	buff = malloc(sizeof(char) * letters);
 
 	if (filename == NULL)
 		return (0);
 
-	for (i = 0; i < strlen(*buff) && *buff[i] != '\0'; i++)
-	{
-		fd = open("Requiescat", O_RDONLY);
-		read(fd, buff[i], 1024);
-		printf("%s", *buff);
-		count++;
-	}
-	letters = count;
+	fd = open("Requiescat", O_RDONLY);
+	read(fd, buff, letters);
+	printf("%s", buff);
 
-	return (letters);
+	for (i = 0; i < letters && buff[i] != '\0'; i++)
+		count++;
+
+	return (count);
 }
