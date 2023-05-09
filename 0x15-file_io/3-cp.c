@@ -18,9 +18,9 @@ int main(int ac, char **av)
 	}
 	fd = open(av[1], O_RDONLY);
 	buff = malloc(BUFFER_SIZE);
-	sz_read = read(fd, buff, BUFFER_SIZE);
 	if (buff == NULL)
 		return (0);
+	sz_read = read(fd, buff, BUFFER_SIZE);
 	if (fd == -1 || sz_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
