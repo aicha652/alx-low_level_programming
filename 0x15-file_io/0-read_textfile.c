@@ -23,7 +23,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buff == NULL)
 		return (0);
 
-	sz_read = read(fd, buff, letters);
+	while ((sz_read = read(fd, buff, letters)) > 0)
+	{
+		sz_write = write(STDOUT_FILENO, buff, sz_read);
+		if (sz_read == -1 || sz_write == -1 || sz_write != sz_read)
+		{
+                return (0);
+		}
+	}
+	/*sz_read = read(fd, buff, letters);
 	if (sz_read == -1)
 	{
 		return (0);
@@ -32,7 +40,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (sz_write == -1 || sz_write != sz_read)
 	{
 		return (0);
-	}
+	}*/
 	close_fd = close(fd);
 	free(buff);
 	if (close_fd == -1)
