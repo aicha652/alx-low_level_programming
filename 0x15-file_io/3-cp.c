@@ -25,7 +25,7 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fdw = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	sz_write = write(fdw, buff, BUFFER_SIZE);
+	sz_write = write(fdw, buff, sz_read);
 	if (fdw == -1 || sz_write == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
