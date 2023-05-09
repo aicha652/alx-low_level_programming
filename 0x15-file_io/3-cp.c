@@ -34,7 +34,12 @@ int main(int ac, char **av)
 	}
 	if (close(fd) == -1 || close(fdw) == -1)
 	{
-		dprintf(2, "Error: Can't close fd\n");
+		dprintf(2, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+	if (close(fdw) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fdw);
 		exit(100);
 	}
 	close(fd);
