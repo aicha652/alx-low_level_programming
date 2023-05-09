@@ -23,24 +23,24 @@ int main(int ac, char **av)
 		exit(97);
 		dprintf(2, "Usage: cp file_from file_to\n");
 	}
-	if (av[2])
+	/*if (av[2])
 	{
 		fdw = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 		sz_write = write(fdw, buff, len);
-	}
+	}*/
 	if (!av[1])
 	{
 		exit(98);
 		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE\n");
 	}
+	fdw = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+        sz_write = write(fdw, buff, len);
 	if (sz_write == -1 || sz_read == -1)
 	{
 		exit(99);
 		dprintf(2, "Error: Can't write to NAME_OF_THE_FILE\n");
 	}
-	fdw = open(av[2], O_WRONLY | O_CREAT, 0664);
-	sz_write = write(fdw, buff, len);
-	(void)fdw;
+
 	close(fd);
 	close(fdw);
 	return (0);
