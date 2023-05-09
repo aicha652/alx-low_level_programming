@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	int fd, fdw, sz_read, sz_write;
+	int fd, fdw, sz_read, sz_write, close_f;
 	char *buff;
 
 	if (ac != 3)
@@ -33,12 +33,14 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	if (close(fd) == -1)
+	close_f = close(fd);
+	if (close_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
-	if (close(fdw) == -1)
+	close_f = close(fdw);
+	if (close_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fdw %d\n", fdw);
 		exit(100);
