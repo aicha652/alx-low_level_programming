@@ -18,8 +18,8 @@ int main(int ac, char **av)
 	}
 	fd = open(av[1], O_RDONLY);
 	buff = malloc(sizeof(char) * 1024);
-	len = strlen (buff);
-        sz_read = read(fd, buff, len);
+	len = strlen(buff);
+	sz_read = read(fd, buff, len);
 	if (fd == -1 || sz_read == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
