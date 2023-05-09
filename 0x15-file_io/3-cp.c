@@ -19,6 +19,8 @@ int main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	buff = malloc(BUFFER_SIZE);
 	sz_read = read(fd, buff, BUFFER_SIZE);
+	if (buff == NULL)
+		return (0);
 	if (fd == -1 || sz_read == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
@@ -41,6 +43,7 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't close fd %d\n", fdw);
 		exit(100);
 	}
+	free(buff);
 	close(fd);
 	close(fdw);
 	return (0);
