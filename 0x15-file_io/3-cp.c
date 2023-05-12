@@ -31,7 +31,7 @@ int main(int ac, char **av)
 	buff = malloc(sizeof(char) * BUFFER_SIZE);
 	if (buff == NULL)
 		return (0);
-	while((sz_read = read(fd, buff, BUFFER_SIZE)) > 0)
+	while ((sz_read = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
 		sz_write = write(fdw, buff, sz_read);
 		if (sz_write == -1)
@@ -41,10 +41,8 @@ int main(int ac, char **av)
 		}
 	}
 	if (sz_read == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
-	}
 	free(buff);
 	close(fd);
 	close(fdw);
