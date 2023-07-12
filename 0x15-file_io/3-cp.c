@@ -8,8 +8,9 @@
 int main(int argc, char *argv[])
 {
 int fd_from, fd_to, sz_read, sz_write, m, n;
-char buff[1024];
+char *buff;
 
+buff = malloc(sizeof(char) * 1024);
 if (argc != 3)
 {
 	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
