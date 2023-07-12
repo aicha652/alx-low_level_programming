@@ -30,7 +30,7 @@ if (sz_read == -1)
 {
 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 }
-sz_write = write(fd_to, buff, sz_read);
+sz_write = write(fd_to, buff, 1024);
 if (sz_write == -1)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
