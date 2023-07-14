@@ -24,25 +24,32 @@ if (fd_to == -1)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 }
-sz_read = read(fd_from, buff, 1024);
-if (sz_read == -1)
+sz_read = 1024;
+while(sz_read == 1024)
 {
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
-}
-sz_write = write(fd_to, buff, sz_read);
-if (sz_write == -1)
-{
-	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-}
-m = close(fd_from);
-if (m == -1)
-{
-	dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_from), exit(100);
-}
-n = close(fd_to);
-if (n == -1)
-{
-	dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_to), exit(100);
+	sz_read = read(fd_from, buff, 1024);
+	if (sz_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+	}
+	if (sz_read > 0)
+	{
+		sz_write = write(fd_to, buff, sz_read);
+		if (sz_write == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+		}
+	}
+	m = close(fd_from);
+	if (m == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_from), exit(100);
+	}
+	n = close(fd_to);
+	if (n == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_to), exit(100);
+	}
 }
 return (0);
 }
