@@ -11,15 +11,16 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *link, *list, *sec_list, *var_list;
 	unsigned int i = 1;
 	unsigned int count = 0;
+	int x;
 
 	if (*head == NULL)
-		return (-1);
+		x = -1;
 	else if (*head != NULL && index == 0)
 	{
 		link = (*head);
 		(*head) = (*head)->next;
 		free(link);
-		return (1);
+		x = 1;
 	}
 	else
 	{
@@ -30,18 +31,34 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			var_list = var_list->next;
 		}
 		if (index >= count)
-			return (-1);
-		link = *head;
-		while (link && i < index)
+			x = -1;
+		else if (index == count - 1)
 		{
-			link = link->next;
-			i += 1;
+			link = *head;
+			while (link && i < index)
+			{
+				link = link->next;
+				i += 1;
+			}
+			list = link->next;
+			link->next = NULL;
+			free(list);
 		}
-		list = link->next;
-		link->next = list->next;
-		sec_list = link->next;
-		sec_list->prev = link;
-		free(list);
-		return (1);
+		else
+		{
+			link = *head;
+			while (link && i < index)
+			{
+				link = link->next;
+				i += 1;
+			}
+			list = link->next;
+			link->next = list->next;
+			sec_list = link->next;
+			sec_list->prev = link;
+			free(list);
+			x = 1;
+		}
 	}
+	return (x);
 }
