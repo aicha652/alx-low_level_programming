@@ -43,8 +43,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			}
 			list = link->next;
 			link->next = list->next;
-			sec_list = link->next;
-			sec_list->prev = link;
+			if (link->next != NULL)
+			{
+				sec_list = link->next;
+				sec_list->prev = link;
+			}
+			else
+				link->next = NULL;
 			free(list);
 			x = 1;
 		}
