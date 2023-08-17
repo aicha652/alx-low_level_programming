@@ -12,15 +12,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	unsigned int i = 1;
 	unsigned int count = 0;
 
-	if (*head == NULL)
-		return (-1);
-	else if (*head != NULL && index == 0)
+	if (*head != NULL && index == 0)
 	{
 		link = (*head);
 		(*head) = (*head)->next;
 		free(link);
 		return (1);
 	}
+	else if (*head == NULL)
+                return (-1);
 	else
 	{
 		var_list = *head;
