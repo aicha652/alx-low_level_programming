@@ -17,6 +17,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (ht == NULL)
 		return (0);
+	if (key == NULL)
+		return (0);
+
 	index = hash_djb2(convert_key) % ht->size;
 	if (ht->array[index] == NULL)
 	{
