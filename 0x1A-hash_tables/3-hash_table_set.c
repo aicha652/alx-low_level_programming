@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 /**
  * hash_table_set - function that adds an element to the hash table
+ * @ht: pointer to the hash_table
  * @key: the key
  * @value: the value associated with the key
  * Return: 1 if it succeeded, 0 otherwise
