@@ -9,10 +9,9 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index;
-	const unsigned char *convert_key = (const unsigned char *)key;
 	hash_node_t *node;
 
-	index = hash_djb2(convert_key) % ht->size;
+	index = key_index((const unsigned char *)key, ht->size);
 	if (ht == NULL)
 		return (NULL);
 	if (key == NULL)
