@@ -8,28 +8,29 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int i = 0;
+	unsigned long int index;
+	const unsigned char *convert_key = (const unsigned char *)key;
 	hash_node_t *node;
 
+	index = hash_djb2(convert_key) % ht->size;
+	if (ht == NULL)
+		return (NULL);
 	if (key == NULL)
-		return NULL;
-	while (i < ht->size && ht != NULL)
+		return (NULL);
+	if (ht->array[index] == NULL)
+		return (NULL);
+	if (strcmp(ht->array[index]->key, key) == 0)
 	{
-		if (ht->array[i] != NULL && strcmp(ht->array[i]->key, key) == 0)
-		{
-			return (ht->array[i]->value);
-			node = ht->array[i]->next;
-			while (node != NULL)
-			{
-				if (strcmp(node->key, key) == 0)
-				{
-					return (node->value);
-				}
-				node = node->next;
-			}
-		}
-		i++;
+		return (ht->array[index]->value);
 	}
-
+	node = ht->array[index]->next;
+	while (node != NULL)
+	{
+		if (strcmp(node->key, key) == 0)
+		{
+			return (node->value);
+		}
+		node = node->next;
+	}
 	return (NULL);
 }
