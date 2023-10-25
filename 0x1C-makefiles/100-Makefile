@@ -7,10 +7,10 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: main.o school.o m.h
         $(CC) main.o school.o -o $(NAME)
-main.o: main.c
+main.o: main.c m.h
 	gcc -Wall -Werror -Wextra -pedantic -c -o $@ $<
 
-school.o: school.c
+school.o: school.c m.h
 	gcc -Wall -Werror -Wextra -pedantic -c -o $@ $<
 
 clean:
