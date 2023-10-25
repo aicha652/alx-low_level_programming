@@ -6,7 +6,7 @@ RM = rm
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: main.o school.o m.h
-        $(CC) main.o school.o -o $(NAME)
+        $(CC) main.o school.o m.h -o $(NAME)
 main.o: main.c m.h
 	gcc -Wall -Werror -Wextra -pedantic -c -o $@ $<
 
