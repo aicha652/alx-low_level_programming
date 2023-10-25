@@ -1,4 +1,4 @@
-##General
+## General
 - What are make, Makefiles
 - When, why and how to use Makefiles
 - What are rules and how to set and use them
